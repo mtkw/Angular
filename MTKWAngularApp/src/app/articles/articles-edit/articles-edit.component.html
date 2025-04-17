@@ -1,0 +1,7 @@
+@if(article){
+<app-articles-form
+  title="Edit Article"
+  [model]="article"
+  (formPosted)="saveChanges($event)"
+></app-articles-form>
+}
