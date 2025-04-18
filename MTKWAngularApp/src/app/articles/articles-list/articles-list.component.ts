@@ -17,7 +17,7 @@ export class ArticlesListComponent {
   columnsToDisplay = ['id', 'title','categorY_ID','category', 'authoR_ID','author', 'createD_AT', 'actions'];
 
   constructor() {
-this.loadArticles();
+    this.loadArticles();
   }
 
 loadArticles(){
@@ -28,7 +28,7 @@ loadArticles(){
 
   delete(id: number) {
     this.articleService.delete(id).subscribe(() => {
-      this.articles = this.articles?.filter((article) => article.id !== id);
+      this.loadArticles();
     });
   }
 }

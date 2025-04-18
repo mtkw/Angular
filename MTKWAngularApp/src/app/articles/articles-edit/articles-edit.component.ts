@@ -1,5 +1,5 @@
 import { Component, inject, Input, numberAttribute, OnInit } from '@angular/core';
-import { Article } from '../articles.models';
+import { Article, ArticleCreation } from '../articles.models';
 import { ArticlesService } from '../articles.service';
 import { Router } from '@angular/router';
 import { ArticlesFormComponent } from "../articles-form/articles-form.component";
@@ -20,13 +20,14 @@ export class ArticlesEditComponent implements OnInit {
 
   articelService = inject(ArticlesService);
 router = inject(Router);  
+
   ngOnInit(): void {
    this.articelService.getById(this.id).subscribe((article) => {
       this.article = article;
     });
   }
 
-  saveChanges(article: Article) {
+  saveChanges(article: ArticleCreation) {
     this.articelService.update(this.id, article).subscribe(() => {
       this.router.navigate(['/articles']);
     });

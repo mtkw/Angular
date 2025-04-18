@@ -2,7 +2,7 @@ export const environment = {
 
     production: true,
   
-    apiUrl: 'https://api.example.com', // Production API URL
+    apiUrl: 'https://localhost:7072', // Production API URL
   
     featureFlag: false // Example feature flag
   
